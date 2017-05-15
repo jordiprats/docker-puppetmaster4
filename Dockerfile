@@ -40,5 +40,7 @@ EXPOSE 8140
 
 # root      6516  199 11.3 5777060 1153624 ?     Sl   12:42   2:49 /usr/bin/java -Xms2g -Xmx2g -XX:MaxPermSize=256m -Djava.security.egd=/dev/urandom -XX:OnOutOfMemoryError=kill -9 %p -cp /opt/puppetlabs/server/apps/puppetserver/puppet-server-release.jar clojure.main -m puppetlabs.trapperkeeper.main --config /etc/puppetlabs/puppetserver/conf.d --bootstrap-config /etc/puppetlabs/puppetserver/services.d/,/opt/puppetlabs/server/apps/puppetserver/config/services.d/ --restart-file /opt/puppetlabs/server/data/puppetserver/restartcounter
 
+VOLUME ["/etc/puppetlabs/puppet/ssl"]
+VOLUME ["/etc/puppetlabs/code"]
 
 #CMD /bin/bash /usr/local/bin/runme.sh
