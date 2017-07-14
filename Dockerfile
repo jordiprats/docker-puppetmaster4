@@ -34,7 +34,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update
 #
 RUN DEBIAN_FRONTEND=noninteractive apt-get install puppetserver
 
-EXPOSE 8140
 
 # root@3e0236d13b29:/opt/puppetlabs/server/bin# ./puppetserver start
 
@@ -42,3 +41,6 @@ EXPOSE 8140
 
 
 #CMD /bin/bash /usr/local/bin/runme.sh
+
+
+EXPOSE 8140
