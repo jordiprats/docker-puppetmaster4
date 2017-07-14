@@ -42,8 +42,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install hiera -y
 
 # root      6516  199 11.3 5777060 1153624 ?     Sl   12:42   2:49 /usr/bin/java -Xms2g -Xmx2g -XX:MaxPermSize=256m -Djava.security.egd=/dev/urandom -XX:OnOutOfMemoryError=kill -9 %p -cp /opt/puppetlabs/server/apps/puppetserver/puppet-server-release.jar clojure.main -m puppetlabs.trapperkeeper.main --config /etc/puppetlabs/puppetserver/conf.d --bootstrap-config /etc/puppetlabs/puppetserver/services.d/,/opt/puppetlabs/server/apps/puppetserver/config/services.d/ --restart-file /opt/puppetlabs/server/data/puppetserver/restartcounter
 
+# root@0b39e98ba12a:/etc/puppetlabs# /opt/puppetlabs/bin/puppet module list
+# /etc/puppetlabs/code/environments/production/modules (no modules installed)
+# /etc/puppetlabs/code/modules (no modules installed)
+# /opt/puppetlabs/puppet/modules (no modules installed)
+
+
 
 #CMD /bin/bash /usr/local/bin/runme.sh
-
-
 EXPOSE 8140
