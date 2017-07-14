@@ -3,6 +3,7 @@ MAINTAINER Jordi Prats
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install tzdata -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install locales -y
 
 #
 # timezone and locale
