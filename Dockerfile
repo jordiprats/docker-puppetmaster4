@@ -35,6 +35,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update
 # puppet server
 #
 RUN DEBIAN_FRONTEND=noninteractive apt-get install puppetserver -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install hiera -y
 
 
 # root@3e0236d13b29:/opt/puppetlabs/server/bin# ./puppetserver start
