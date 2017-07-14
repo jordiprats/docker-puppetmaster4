@@ -34,7 +34,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update
 #
 # puppet server
 #
-RUN DEBIAN_FRONTEND=noninteractive apt-get install puppetserver
+RUN DEBIAN_FRONTEND=noninteractive apt-get install puppetserver -y
 
 
 # root@3e0236d13b29:/opt/puppetlabs/server/bin# ./puppetserver start
