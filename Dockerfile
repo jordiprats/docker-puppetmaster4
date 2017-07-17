@@ -4,7 +4,7 @@ MAINTAINER Jordi Prats
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install tzdata -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install locales -y
-
+RUN DEBIAN_FRONTEND=noninteractive apt-get install git -y
 #
 # timezone and locale
 #
@@ -37,7 +37,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install puppetserver -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install hiera -y
 
-
 # root@3e0236d13b29:/opt/puppetlabs/server/bin# ./puppetserver start
 
 # root      6516  199 11.3 5777060 1153624 ?     Sl   12:42   2:49 /usr/bin/java -Xms2g -Xmx2g -XX:MaxPermSize=256m -Djava.security.egd=/dev/urandom -XX:OnOutOfMemoryError=kill -9 %p -cp /opt/puppetlabs/server/apps/puppetserver/puppet-server-release.jar clojure.main -m puppetlabs.trapperkeeper.main --config /etc/puppetlabs/puppetserver/conf.d --bootstrap-config /etc/puppetlabs/puppetserver/services.d/,/opt/puppetlabs/server/apps/puppetserver/config/services.d/ --restart-file /opt/puppetlabs/server/data/puppetserver/restartcounter
@@ -46,6 +45,16 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install hiera -y
 # /etc/puppetlabs/code/environments/production/modules (no modules installed)
 # /etc/puppetlabs/code/modules (no modules installed)
 # /opt/puppetlabs/puppet/modules (no modules installed)
+
+RUN mkdir -p /usr/local/src/puppet-masterless
+RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/src/puppet-masterless
+
+RUN mkdir -p /usr/local/src/eyp-puppet
+RUN git clone https://github.com/jordiprats/eyp-puppet /usr/local/src/eyp-puppet
+
+RUN mkdir -p /usr/local/puppetmasterless
+#RUN
+
 
 VOLUME ["/etc/puppetlabs/puppet/ssl"]
 VOLUME ["/etc/puppetlabs/code"]
