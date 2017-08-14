@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER Jordi Prats
 
+COPY runme.sh /usr/local/bin/
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install tzdata -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install locales -y
@@ -49,5 +51,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install hiera -y
 
 
 
-#CMD /bin/bash /usr/local/bin/runme.sh
+CMD /bin/bash /usr/local/bin/runme.sh
 EXPOSE 8140
