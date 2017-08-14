@@ -48,14 +48,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install hiera -y
 # /etc/puppetlabs/code/modules (no modules installed)
 # /opt/puppetlabs/puppet/modules (no modules installed)
 
-RUN mkdir -p /usr/local/src/puppet-masterless
-RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/src/puppet-masterless
-
-RUN mkdir -p /usr/local/src/eyp-puppet
-RUN git clone https://github.com/jordiprats/eyp-puppet /usr/local/src/eyp-puppet
-
-RUN mkdir -p /usr/local/puppet-masterless
-RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/puppet-masterless
+# pendent
+# RUN mkdir -p /usr/local/src/puppet-masterless
+# RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/src/puppet-masterless
+#
+# RUN mkdir -p /usr/local/src/eyp-puppet
+# RUN git clone https://github.com/jordiprats/eyp-puppet /usr/local/src/eyp-puppet
+#
+# RUN mkdir -p /usr/local/puppet-masterless
+# RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/puppet-masterless
 
 
 VOLUME ["/etc/puppetlabs/puppet/ssl"]
