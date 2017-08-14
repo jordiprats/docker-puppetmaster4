@@ -54,8 +54,8 @@ RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/src/pup
 RUN mkdir -p /usr/local/src/eyp-puppet
 RUN git clone https://github.com/jordiprats/eyp-puppet /usr/local/src/eyp-puppet
 
-RUN mkdir -p /usr/local/puppetmasterless
-#RUN
+RUN mkdir -p /usr/local/puppet-masterless
+RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/puppet-masterless
 
 
 VOLUME ["/etc/puppetlabs/puppet/ssl"]
