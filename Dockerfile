@@ -61,6 +61,25 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install hiera -y
 # RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/puppet-masterless
 
 
+#
+# dependencies
+#
+
+# yamlwildcard - TODO: actualitzar puppet4
+RUN mkdir -p /usr/local/src/yamlwildcard
+RUN git clone https://github.com/jordiprats/hiera-yaml_wildcard /usr/local/src/yamlwildcard
+RUN bash -c 'cd /usr/local/src/yamlwildcard; gem build /usr/local/src/yamlwildcard/hiera-yaml_wildcard.gemspec'
+RUN gem install /usr/local/src/yamlwildcard/hiera-yaml_wildcard-0.1.0.gem
+
+#deep_merge
+RUN gem install deep_merge
+
+#templates puppe module generate
+RUN mkdir -p /usr/local/src/puppet-module-skeleton
+RUN git clone https://github.com/NTTCom-MS/puppet-module-skeleton.git /usr/local/src/puppet-module-skeleton
+RUN bash -c 'cd /usr/local/src/puppet-module-skeleton; bash install.sh'
+
+
 VOLUME ["/etc/puppetlabs/puppet/ssl"]
 VOLUME ["/etc/puppetlabs/code"]
 
