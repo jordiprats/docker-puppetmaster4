@@ -7,6 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install tzdata -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install locales -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install git -y
+
 #
 # timezone and locale
 #
@@ -49,6 +50,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install hiera -y
 # /opt/puppetlabs/puppet/modules (no modules installed)
 
 # pendent
+#
 # RUN mkdir -p /usr/local/src/puppet-masterless
 # RUN git clone https://github.com/jordiprats/puppet-masterless /usr/local/src/puppet-masterless
 #
