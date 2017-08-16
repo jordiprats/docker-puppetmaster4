@@ -79,6 +79,11 @@ RUN mkdir -p /usr/local/src/puppet-module-skeleton
 RUN git clone https://github.com/NTTCom-MS/puppet-module-skeleton.git /usr/local/src/puppet-module-skeleton
 RUN bash -c 'cd /usr/local/src/puppet-module-skeleton; bash install.sh'
 
+#
+# puppet strings
+#
+RUN /opt/puppetlabs/bin/puppet resource package yard provider=puppet_gem
+RUN /opt/puppetlabs/bin/puppet module install puppetlabs-strings
 
 VOLUME ["/etc/puppetlabs/puppet/ssl"]
 VOLUME ["/etc/puppetlabs/code"]
