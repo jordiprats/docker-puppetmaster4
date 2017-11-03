@@ -2,6 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Jordi Prats
 
 COPY runme.sh /usr/local/bin/
+COPY mkvols.sh /usr/local/bin/
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install tzdata -y
